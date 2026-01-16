@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b18b0f03040571147afcb3bb892db444, type: 3}
-  m_Name: Meat
+  m_Name: Chiken
   m_EditorClassIdentifier: 
-  cardName: Meat
+  cardName: Chiken
+  type: meat
   artwork: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  value: 10
+  value: 8
   multiplier: 0
-  description: meaty

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Salt
   m_EditorClassIdentifier: 
   cardName: Salt
-  artwork: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  value: 8
-  multiplier: 1
-  description: salty
+  type: salty
+  artwork: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  value: 4
+  multiplier: 2

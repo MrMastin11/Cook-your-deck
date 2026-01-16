@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aeb79faff073b74489d43a045809b058
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cardPrefab: {instanceID: 0}
+  - tableParent: {instanceID: 0}
+  - dragCard: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+// UI карток в грі
 
 public class CardView : MonoBehaviour
 {
@@ -23,8 +24,9 @@ public class CardView : MonoBehaviour
     public void Refresh()
     {
         nameText.text = instance.data.cardName;
+        tasteText.text = instance.type;
         artworkImage.sprite = instance.data.artwork;
-        valueText.text = instance.value.ToString();
-        multiplierText.text = "x" + instance.multiplier;
+        valueText.text = "+" + instance.value.ToString();
+        multiplierText.text = "+" + instance.multiplier.ToString();
     }
 }
