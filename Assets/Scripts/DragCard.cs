@@ -7,7 +7,6 @@ public class DragCard : MonoBehaviour,
     private Vector3 originalPosition;
     private Transform originalParent;
     private CanvasGroup canvasGroup;
-
     private DropZone currentZone;
 
     private void Awake()
