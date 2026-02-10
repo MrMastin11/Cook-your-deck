@@ -1,13 +1,13 @@
-[System.Serializable]
-//конкретні карти в грі
-public class CardInstance
+using UnityEngine;
+
+public class CardInstance : MonoBehaviour
 {
     public CardData data;
     public string type;
     public int value;
     public int multiplier;
 
-    public CardInstance(CardData data)
+    public void Init(CardData data)
     {
         this.data = data;
         type = data.type;
@@ -15,3 +15,4 @@ public class CardInstance
         multiplier = data.multiplier;
     }
 }
+ 

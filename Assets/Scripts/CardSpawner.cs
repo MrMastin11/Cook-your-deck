@@ -18,10 +18,14 @@ public class CardSpawner : MonoBehaviour
     public void SpawnCard(CardData data)
     {
         CardView view = Instantiate(cardPrefab);
-        CardInstance instance = new CardInstance(data);
+
+        CardInstance instance = view.GetComponent<CardInstance>();
+        instance.Init(data);
+
         view.Init(instance);
 
         DragCard dragCard = view.GetComponent<DragCard>();
-        tableZone.AttachCard(dragCard);
+        tableZone.AttachCardAtPosition(dragCard, tableZone.cards.Count);
     }
+
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shugar
   m_EditorClassIdentifier: 
   cardName: Shugar
-  type: sweet
-  artwork: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  type: Sweet
+  artwork: {fileID: 7173412184878827766, guid: 83de2a49a1b78a34eb7758573f0e63f9, type: 3}
   value: 6
   multiplier: 1
