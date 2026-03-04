@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Vector3 originalPosition;
@@ -82,7 +83,6 @@ public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        // Prevent hover effect if currently dragging this card
         if (!isPointerOver && !Input.GetMouseButton(0))
         {
             isPointerOver = true;
@@ -98,5 +98,12 @@ public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             isPointerOver = false;
             transform.position = originalPosition;
         }
+    }
+    public void countingUP()
+    {
+        isPointerOver = true;
+        originalPosition = transform.position;
+        transform.position = originalPosition + new Vector3(0, hoverOffsetY, 0);
+        return;
     }
 }
