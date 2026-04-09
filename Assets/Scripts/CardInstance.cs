@@ -15,4 +15,3 @@ public class CardInstance : MonoBehaviour
         multiplier = data.multiplier;
     }
 }
- 

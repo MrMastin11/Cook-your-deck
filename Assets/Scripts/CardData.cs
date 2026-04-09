@@ -1,5 +1,4 @@
 using UnityEngine;
-// Карточкові дані як ScriptableObject
 
 [CreateAssetMenu(fileName = "Card", menuName = "Scriptable Objects/Card")]
 public class CardData : ScriptableObject
@@ -10,8 +9,8 @@ public class CardData : ScriptableObject
     public Sprite artwork;
 
     [Header("Gameplay")]
-    public int value;        // очки
-    public int multiplier;   // множник;
+    public int value;  
+    public int multiplier; 
 }
 
 

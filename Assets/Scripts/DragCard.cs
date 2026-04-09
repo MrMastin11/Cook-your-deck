@@ -1,73 +1,109 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-
-public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class DragCard : MonoBehaviour,
+    IBeginDragHandler, IDragHandler, IEndDragHandler,
+    IPointerEnterHandler, IPointerExitHandler,
+    IPointerClickHandler
 {
     private Vector3 originalPosition;
     private Transform originalParent;
     private CanvasGroup canvasGroup;
     private DropZone currentZone;
 
-    private Vector3 originalScale;
-    private bool isPointerOver = false;
-    private float hoverScale = 1f;
+    [Header("Scale Settings")]
+    private Vector3 baseScale;
+    private float hoverMultiplier = 1.1f;
+    private bool isEnlarged = false;
+
+    [Header("Hover Settings")]
     private float hoverOffsetY = 40f;
+    private bool isDragging = false;
+
+    public bool isRewardCard = false; // ✅ тепер НЕ static
+    public static bool inputLocked = false;
+
+    private Canvas canvas;
 
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        originalScale = transform.localScale;
+        baseScale = transform.localScale;
+        canvas = GetComponentInParent<Canvas>();
     }
 
-    public void SetCurrentZone(DropZone zone)
+    private void ScaleUp()
     {
-        currentZone = zone;
-        originalParent = zone.transform;
-        originalPosition = transform.position;
+        if (!isEnlarged)
+        {
+            transform.localScale = baseScale * hoverMultiplier;
+            isEnlarged = true;
+        }
+    }
+
+    private void ScaleDown()
+    {
+        if (isEnlarged)
+        {
+            transform.localScale = baseScale;
+            isEnlarged = false;
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (inputLocked || isRewardCard) return; // ❗ блок для reward
+
+        isDragging = true;
         originalPosition = transform.position;
         originalParent = transform.parent;
 
         canvasGroup.blocksRaycasts = false;
-        transform.SetParent(transform.root);
+        transform.SetParent(canvas != null ? canvas.transform : transform.root);
 
-        originalScale = transform.localScale;
-        transform.localScale = originalScale * hoverScale;
+        ScaleUp();
 
-        if (currentZone != null)
-        {
-            currentZone.RemoveCard(this);
-        }
+        if (currentZone != null) currentZone.RemoveCard(this);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;
+        if (inputLocked || isRewardCard) return;
+
+        if (canvas != null)
+        {
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(
+                canvas.transform as RectTransform,
+                eventData.position,
+                eventData.pressEventCamera,
+                out Vector3 worldPoint
+            );
+            transform.position = worldPoint;
+        }
+        else
+        {
+            transform.position = Input.mousePosition;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (inputLocked || isRewardCard) return;
+
+        isDragging = false;
         canvasGroup.blocksRaycasts = true;
 
+        ScaleDown();
+
         DropZone targetZone = null;
-
-        transform.localScale = originalScale;
-
         if (eventData.pointerEnter != null)
             targetZone = eventData.pointerEnter.GetComponentInParent<DropZone>();
 
-        if (targetZone == null)
-            targetZone = currentZone;
+        if (targetZone == null) targetZone = currentZone;
 
         if (!targetZone.CanAcceptCard(this))
         {
-            transform.SetParent(originalParent);
-            transform.position = originalPosition;
-            currentZone.UpdateCardPositions();
+            ReturnToPrevious();
             return;
         }
 
@@ -81,29 +117,53 @@ public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             targetZone.OnCardAddedToTable(this);
     }
 
+    private void ReturnToPrevious()
+    {
+        transform.SetParent(originalParent);
+        transform.position = originalPosition;
+        ScaleDown();
+        if (currentZone != null) currentZone.UpdateCardPositions();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (isRewardCard)
+        {
+            CardInstance instance = GetComponent<CardInstance>();
+
+            if (instance != null)
+            {
+                DeckManager deck = Object.FindFirstObjectByType<DeckManager>();
+                deck.SelectRewardCard(this, instance.data);
+            }
+        }
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!isPointerOver && !Input.GetMouseButton(0))
-        {
-            isPointerOver = true;
-            originalPosition = transform.position;
-            transform.position = originalPosition + new Vector3(0, hoverOffsetY, 0);
-        }
+        if (isDragging || Input.GetMouseButton(0)) return;
+        ScaleUp();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (isPointerOver)
-        {
-            isPointerOver = false;
-            transform.position = originalPosition;
-        }
+        if (isDragging) return;
+        ScaleDown();
     }
+
+    public void SetCurrentZone(DropZone zone)
+    {
+        currentZone = zone;
+        originalParent = zone.transform;
+    }
+
     public void countingUP()
     {
-        isPointerOver = true;
-        originalPosition = transform.position;
-        transform.position = originalPosition + new Vector3(0, hoverOffsetY, 0);
-        return;
+        inputLocked = true;
+        canvasGroup.blocksRaycasts = false;
+
+        RectTransform rect = transform as RectTransform;
+        originalPosition = rect.anchoredPosition;
+        rect.anchoredPosition += new Vector2(0, hoverOffsetY);
     }
 }
