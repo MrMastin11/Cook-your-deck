@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
-using System.Collections;
 
 public class DeckManager : MonoBehaviour
 {
@@ -79,6 +80,7 @@ public class DeckManager : MonoBehaviour
 
         CardData data = deck[deck.Count - 1];
         deck.RemoveAt(deck.Count - 1);
+        CheckAndRefillDeck();
         SpawnCardInHand(data);
     }
 
@@ -170,7 +172,7 @@ public class DeckManager : MonoBehaviour
             DrawCard();
             yield return StartCoroutine(WaitSecond(smallWait));
         }
-
+        CheckAndRefillDeck();
         DragCard.inputLocked = false;
     }
 
@@ -443,5 +445,38 @@ public class DeckManager : MonoBehaviour
     {
         if (dayText != null)
             dayText.text = "Day: " + Day.ToString();
+    }
+    public int DeckCount => deck.Count;
+
+    public string GetDeckTooltipText()
+    {
+        if (deck.Count == 0)
+            return "Deck is empty";
+
+        Dictionary<string, int> counts = new Dictionary<string, int>();
+
+        foreach (var card in deck)
+        {
+            if (card == null) continue;
+
+            string key = card.name; // якщо є окреме поле типу cardTitle, підстав його тут
+            if (counts.TryGetValue(key, out int value))
+                counts[key] = value + 1;
+            else
+                counts[key] = 1;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        foreach (var pair in counts)
+            sb.AppendLine($"{pair.Key} x{pair.Value}");
+
+        return sb.ToString().TrimEnd();
+    }
+    private void CheckAndRefillDeck()
+    {
+        if (deck.Count == 0 && discardPile.Count > 0)
+        {
+            RefillDeck();
+        }
     }
 }

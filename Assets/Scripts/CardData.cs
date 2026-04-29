@@ -10,7 +10,8 @@ public class CardData : ScriptableObject
 
     [Header("Gameplay")]
     public int value;  
-    public int multiplier; 
+    public int multiplier;
+    public int level = 1;
 }
 
 

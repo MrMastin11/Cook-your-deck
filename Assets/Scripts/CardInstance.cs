@@ -6,6 +6,7 @@ public class CardInstance : MonoBehaviour
     public string type;
     public int value;
     public int multiplier;
+    public int level;
 
     public void Init(CardData data)
     {
@@ -13,5 +14,6 @@ public class CardInstance : MonoBehaviour
         type = data.type;
         value = data.value;
         multiplier = data.multiplier;
+        level = data.level;
     }
 }
