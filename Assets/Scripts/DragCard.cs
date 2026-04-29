@@ -19,8 +19,9 @@ public class DragCard : MonoBehaviour,
     [Header("Hover Settings")]
     private float hoverOffsetY = 40f;
     private bool isDragging = false;
+    private bool isSelected = false;
 
-    public bool isRewardCard = false; // ✅ тепер НЕ static
+    public bool isRewardCard = false;
     public static bool inputLocked = false;
 
     private Canvas canvas;
@@ -52,7 +53,7 @@ public class DragCard : MonoBehaviour,
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (inputLocked || isRewardCard) return; // ❗ блок для reward
+        if (inputLocked || isRewardCard) return;
 
         isDragging = true;
         originalPosition = transform.position;
@@ -127,15 +128,23 @@ public class DragCard : MonoBehaviour,
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (isRewardCard)
-        {
-            CardInstance instance = GetComponent<CardInstance>();
+        if (!isRewardCard) return;
 
-            if (instance != null)
-            {
-                DeckManager deck = Object.FindFirstObjectByType<DeckManager>();
-                deck.SelectRewardCard(this, instance.data);
-            }
+        // 🔒 миттєвий глобальний блок
+        if (inputLocked) return;
+        inputLocked = true;
+
+        if (isSelected) return;
+        isSelected = true;
+
+        canvasGroup.blocksRaycasts = false;
+
+        CardInstance instance = GetComponent<CardInstance>();
+
+        if (instance != null)
+        {
+            DeckManager deck = Object.FindFirstObjectByType<DeckManager>();
+            deck.SelectRewardCard(this, instance.data);
         }
     }
 

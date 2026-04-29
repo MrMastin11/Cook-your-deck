@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\PROJECTS\\Cook your deck!\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|d:\\projects\\cook your deck!\\assets\\scripts\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|d:\\projects\\cook your deck!\\assets\\scrollingbackground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scrollingbackground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\dragcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|d:\\projects\\cook your deck!\\assets\\scripts\\dragcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dragcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,12 +15,16 @@
       "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\packcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\dropzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dropzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\cardinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\dropzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dropzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\carddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,21 +38,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "DeckManager.cs",
               "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\DeckManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DeckManager.cs",
               "ToolTip": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\DeckManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\DeckManager.cs",
-              "ViewState": "AgIAAIoBAAAAAAAAAAAAwK4BAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAN4AAAAAAAAAAAAIwPsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-26T12:48:04.383Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -58,7 +61,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\DragCard.cs",
               "ToolTip": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\DragCard.cs",
               "RelativeToolTip": "Assets\\Scripts\\DragCard.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAUwIAAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAswI8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-16T18:59:53.748Z",
               "IsPinned": true,
@@ -66,15 +69,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PackController.cs",
-              "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\PackController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PackController.cs",
-              "ToolTip": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\PackController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PackController.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAmwIoAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ScrollingBackground.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\ScrollingBackground.cs",
+              "RelativeDocumentMoniker": "Assets\\ScrollingBackground.cs",
+              "ToolTip": "D:\\PROJECTS\\Cook your deck!\\Assets\\ScrollingBackground.cs",
+              "RelativeToolTip": "Assets\\ScrollingBackground.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T20:27:58.035Z",
+              "WhenOpened": "2026-04-27T17:39:13.125Z",
               "EditorCaption": ""
             },
             {
@@ -95,20 +98,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "PackController.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\PackController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PackController.cs",
+              "ToolTip": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\PackController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PackController.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAIwLQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T20:27:58.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DropZone.cs",
               "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\DropZone.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DropZone.cs",
               "ToolTip": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\DropZone.cs",
               "RelativeToolTip": "Assets\\Scripts\\DropZone.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAIwEoAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAswEoAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T19:53:16.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-16T19:53:16.284Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CardData.cs",
               "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\CardData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardData.cs",
@@ -128,8 +142,7 @@
               "RelativeToolTip": "Assets\\Scripts\\CardInstance.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T21:57:08.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-23T21:57:08.223Z"
             }
           ]
         }

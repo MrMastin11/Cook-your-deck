@@ -19,9 +19,13 @@ public class DropZone : MonoBehaviour
 
     public void AttachCardAtPosition(DragCard card, int index)
     {
-        if (!CanAcceptCard(card)) return;
+        bool alreadyInZone = cards.Contains(card);
 
-        if (cards.Contains(card))
+        //  €кщо нова карта ≥ м≥сц€ нема Ч не додаЇмо
+        if (!alreadyInZone && cards.Count >= maxCards)
+            return;
+
+        if (alreadyInZone)
             cards.Remove(card);
 
         index = Mathf.Clamp(index, 0, cards.Count);
@@ -29,6 +33,7 @@ public class DropZone : MonoBehaviour
 
         card.transform.SetParent(transform);
         card.SetCurrentZone(this);
+
         UpdateCardPositions();
 
         if (endButton != null)
@@ -49,6 +54,16 @@ public class DropZone : MonoBehaviour
 
     public void UpdateCardPositions()
     {
+        // анти-баг: н≥коли не б≥льше maxCards
+        if (cards.Count > maxCards)
+        {
+            for (int i = cards.Count - 1; i >= maxCards; i--)
+            {
+                Destroy(cards[i].gameObject);
+                cards.RemoveAt(i);
+            }
+        }
+
         for (int i = 0; i < cards.Count; i++)
         {
             cards[i].transform.position = transform.position + Vector3.right * spacing * i;

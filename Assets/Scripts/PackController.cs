@@ -167,11 +167,6 @@ public class PackController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         transform.localScale = originalScale;
         cg.alpha = 0f;
         gameObject.SetActive(false);
-
-        // If you want to make it visible again later:
-        // gameObject.SetActive(true);
-        // cg.alpha = 1f;
-        // transform.localScale = originalScale;
     }
 
     public void SetPaused(bool value)

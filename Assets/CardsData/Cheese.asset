@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18b0f03040571147afcb3bb892db444, type: 3}
+  m_Name: Cheese
+  m_EditorClassIdentifier: 
+  cardName: Cheese
+  type: Salty
+  artwork: {fileID: -4470592730861715767, guid: 5740e5a88d3855348837445bfb203598, type: 3}
+  value: 8
+  multiplier: 4
