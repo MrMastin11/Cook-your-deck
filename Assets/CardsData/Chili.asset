@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Chili
   type: Spicy
-  artwork: {fileID: 0}
+  artwork: {fileID: 5970458825594355708, guid: e5aee992f196b9146b8353251c86f267, type: 3}
   value: 0
   multiplier: 8
+  level: 1

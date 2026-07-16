@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Nuts
   type: Salty
-  artwork: {fileID: 0}
+  artwork: {fileID: 8024170800127884669, guid: 9590c222510b4e04e9384503ad8f5864, type: 3}
   value: 6
   multiplier: 5
+  level: 1

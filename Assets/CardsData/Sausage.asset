@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Sausage
   type: Meat
-  artwork: {fileID: 0}
+  artwork: {fileID: 7351828710199931212, guid: 72dea0cd47065b04ea45f5f7958717ba, type: 3}
   value: 14
   multiplier: 1
+  level: 1

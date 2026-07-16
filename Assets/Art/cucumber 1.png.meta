@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b066184dfb8d43d44a47309acaea3820
+guid: 9d786b6e7dd8c554ba369cd7a68c0a14
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8030675885249521623
-    second: BANANA_0
+      213: 386318240462476958
+    second: cucumber 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BANANA_0
+      name: cucumber 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9281869a4de4d8090800000000000000
-      internalID: -8030675885249521623
+      spriteID: e961505946a7c5500800000000000000
+      internalID: 386318240462476958
       vertices: []
       indices: 
       edges: []

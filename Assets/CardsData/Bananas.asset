@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b18b0f03040571147afcb3bb892db444, type: 3}
-  m_Name: "\u0421ucumbers"
+  m_Name: Bananas
   m_EditorClassIdentifier: 
-  cardName: Cucumbers
-  type: Salty
-  artwork: {fileID: 0}
+  cardName: Bananas
+  type: Sweet
+  artwork: {fileID: 9054380000039871621, guid: 90d800792f94988489eb1cfd98049bf8, type: 3}
   value: 10
   multiplier: 3
+  level: 1

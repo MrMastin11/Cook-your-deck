@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Honey
   type: Sweet
-  artwork: {fileID: 0}
+  artwork: {fileID: 3327116256587992624, guid: ae914313965a66044b95cd7c59ccb147, type: 3}
   value: 8
   multiplier: 4
+  level: 1

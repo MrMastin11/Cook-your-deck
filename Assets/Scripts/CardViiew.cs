@@ -13,6 +13,8 @@ public class CardView : MonoBehaviour
     [SerializeField] private TMP_Text multiplierText;
 
     private CardInstance instance;
+    private bool showLevelLabel;
+    private bool showMergeLabel;
 
     public void Init(CardInstance card)
     {
@@ -22,10 +24,30 @@ public class CardView : MonoBehaviour
 
     public void Refresh()
     {
-        nameText.text = instance.data.cardName;
+        string cardName = instance.data.cardName;
+
+        if (showLevelLabel)
+            cardName += " lvl " + instance.level.ToString();
+
+        nameText.text = cardName;
+        if (descriptionText != null)
+            descriptionText.text = showMergeLabel ? "Merge" : "";
+
         tasteText.text = instance.type;
         artworkImage.sprite = instance.data.artwork;
         valueText.text = instance.value.ToString();
         multiplierText.text = instance.multiplier.ToString();
+    }
+
+    public void SetLevelLabelVisible(bool value)
+    {
+        showLevelLabel = value;
+        Refresh();
+    }
+
+    public void SetMergeLabelVisible(bool value)
+    {
+        showMergeLabel = value;
+        Refresh();
     }
 }

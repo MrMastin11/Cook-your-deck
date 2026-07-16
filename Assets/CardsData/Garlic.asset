@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Garlic
   type: Spicy
-  artwork: {fileID: 0}
+  artwork: {fileID: -8944997348610683000, guid: 3563296900f75e547bfa05f86e11490a, type: 3}
   value: 4
   multiplier: 6
+  level: 1

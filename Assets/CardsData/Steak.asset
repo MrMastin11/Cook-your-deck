@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Steak
   type: Meat
-  artwork: {fileID: 0}
+  artwork: {fileID: 2313043236011815425, guid: ab8c5fecfb708d84fbdfe196e71bfec7, type: 3}
   value: 16
   multiplier: 0
+  level: 1

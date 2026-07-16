@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ef4543c5b01c84d4e9c9472ab62ee312
+guid: ab8c5fecfb708d84fbdfe196e71bfec7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2005318212719663776
-    second: "\u043F\u0456\u0432\u043E4_0"
+      213: 2313043236011815425
+    second: steak_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043F\u0456\u0432\u043E4_0"
+      name: steak_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1600
-        height: 900
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0aad6c23a4254db10800000000000000
-      internalID: 2005318212719663776
+      spriteID: 102ba907194991020800000000000000
+      internalID: 2313043236011815425
       vertices: []
       indices: 
       edges: []

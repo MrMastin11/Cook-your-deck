@@ -17,3 +17,4 @@ MonoBehaviour:
   artwork: {fileID: -5269852683969334490, guid: bf92ba82fbad8104bbb527a8ea601fcc, type: 3}
   value: 4
   multiplier: 2
+  level: 1

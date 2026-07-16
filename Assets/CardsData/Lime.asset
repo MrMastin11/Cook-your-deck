@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Lime
   type: Sour
-  artwork: {fileID: 0}
+  artwork: {fileID: -460922892547401545, guid: 00332aece8377314f964182b2436e436, type: 3}
   value: 4
   multiplier: 6
+  level: 1

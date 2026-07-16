@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Aplle
   type: Sour
-  artwork: {fileID: 0}
+  artwork: {fileID: -3153110018579401958, guid: 0cb0c0ceb24210440bc75dda88a6c083, type: 3}
   value: 8
   multiplier: 4
+  level: 1
