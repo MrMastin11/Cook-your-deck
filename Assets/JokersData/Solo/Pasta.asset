@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5b0a03a9a45ac3478fd4fd307c59dba, type: 3}
-  m_Name: Juice
+  m_Name: Pasta
   m_EditorClassIdentifier: 
-  jokerName: 
+  jokerName: Pasta
+  jokerSprite: {fileID: 0}
   conditionType: 0
-  cardTypes: 
-  valueType: 0
-  operationType: 0
-  rewardValue: 0
-  description: 
+  cardTypes: 02000000
+  scoreReward:
+    operationType: 0
+    value: 10
+  multiplierReward:
+    operationType: 0
+    value: 0
+  description: Salty cards gain +10 Taste

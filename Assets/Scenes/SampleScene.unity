@@ -789,7 +789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: 158.88}
+  m_AnchoredPosition: {x: 300, y: 144.13}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434402957
@@ -2157,7 +2157,7 @@ GameObject:
   - component: {fileID: 984774615}
   - component: {fileID: 984774613}
   m_Layer: 5
-  m_Name: Joker Jone
+  m_Name: Joker zone
   m_TagString: DropZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2170,8 +2170,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984774611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5169.098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2179,8 +2179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 88.49501, y: 251.5}
-  m_SizeDelta: {x: 623.01, y: 85.25}
+  m_AnchoredPosition: {x: 144, y: 244.13}
+  m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984774613
 MonoBehaviour:
@@ -2199,12 +2199,12 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 120
+  m_ChildAlignment: 3
+  m_Spacing: 10
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
@@ -2292,7 +2292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000049114227, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.0000069857, y: -0.0000012338}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005969957
@@ -2908,6 +2908,30 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c49ffe4f93e8c2d448a9a3619e95fec7, type: 2}
   - {fileID: 11400000, guid: 17dce445f544b8641a7a3b3436a7cab6, type: 2}
   - {fileID: 11400000, guid: c964a5af53d37f74288a4891a16f241c, type: 2}
+  jokerPrefab: {fileID: -2710322194611821725, guid: f8c90a05b366c83488dc438f345ac1e7, type: 3}
+  jokerZone: {fileID: 984774612}
+  allJokers:
+  - {fileID: 11400000, guid: d8df4faf414876445a8253ba37d7cd85, type: 2}
+  - {fileID: 11400000, guid: badd27d8e4942ed4f970be6d6ecf751d, type: 2}
+  - {fileID: 11400000, guid: e772498d360da824789451d20e63328f, type: 2}
+  - {fileID: 11400000, guid: 6600c179ef3e5914a9c975048823c1cc, type: 2}
+  - {fileID: 11400000, guid: 8a5abf38bf1e8f741a2cd35f388864e2, type: 2}
+  - {fileID: 11400000, guid: 92dc0fc6ce4adfb4a8aa76c7dc0f49a1, type: 2}
+  - {fileID: 11400000, guid: 65632c3f3e0471d42a8330987a15238b, type: 2}
+  - {fileID: 11400000, guid: 75fede178843f8445a4a7ad1d0cc18ee, type: 2}
+  - {fileID: 11400000, guid: 692cb9fd641e0c74592ceaed9520536e, type: 2}
+  - {fileID: 11400000, guid: 8fbf72bd1d6180644ac3c99ccc696bf7, type: 2}
+  - {fileID: 11400000, guid: fc7be8790f17c9f489d0cd09137d2966, type: 2}
+  - {fileID: 11400000, guid: 5d826827c4840364095131c9a08c5d99, type: 2}
+  - {fileID: 11400000, guid: f6d4f387920f6354e9afe5b68c524f27, type: 2}
+  - {fileID: 11400000, guid: 8d3e00be9e52d944aaf489cf95916e0d, type: 2}
+  - {fileID: 11400000, guid: 297c7637c00f8ed4388ccbc53ffaa372, type: 2}
+  - {fileID: 11400000, guid: 400c4a0664b7d2b46bb7982c3df91f9f, type: 2}
+  - {fileID: 11400000, guid: 8d2562e6a609e3b41a5d04490b90e8ab, type: 2}
+  - {fileID: 11400000, guid: 38062c70dee2d334fa7e5803ecfe44bc, type: 2}
+  - {fileID: 11400000, guid: acc1dc0906310b145894b66f90b0fd29, type: 2}
+  - {fileID: 11400000, guid: 737e7be24daaa784885729892a47576f, type: 2}
+  currentJokers: []
   score: 0
   minimumScore: 50
   ValueText: {fileID: 1924613558}
@@ -3100,7 +3124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 470, y: 158.88}
+  m_AnchoredPosition: {x: 470, y: 144.13}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326722119
@@ -3590,7 +3614,6 @@ RectTransform:
   - {fileID: 434402956}
   - {fileID: 2015296878}
   - {fileID: 343366644}
-  - {fileID: 984774612}
   - {fileID: 1924613557}
   - {fileID: 2039580633}
   - {fileID: 1260065918}
@@ -3605,11 +3628,12 @@ RectTransform:
   - {fileID: 1042883830}
   - {fileID: 1326722118}
   - {fileID: 1176473021}
+  - {fileID: 984774612}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.7503, y: -0.9567261}
+  m_AnchoredPosition: {x: -0.86, y: -0.9567261}
   m_SizeDelta: {x: 1207.9504, y: 588.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1507871621
@@ -4364,11 +4388,11 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 120
+  m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
@@ -4385,7 +4409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards: []
-  spacing: 100
+  spacing: 120
   isTableZone: 0
   maxCards: 5
   endButton: {fileID: 434402955}
@@ -5230,7 +5254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 118.875}
+  m_AnchoredPosition: {x: 0, y: 90}
   m_SizeDelta: {x: 360, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2015296879

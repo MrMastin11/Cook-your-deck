@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b0a03a9a45ac3478fd4fd307c59dba, type: 3}
   m_Name: Heat
   m_EditorClassIdentifier: 
-  jokerName: 
+  jokerName: Heat
+  jokerSprite: {fileID: 0}
   conditionType: 0
-  cardTypes: 
-  valueType: 0
-  operationType: 0
-  rewardValue: 0
-  description: 
+  cardTypes: 04000000
+  scoreReward:
+    operationType: 0
+    value: 0
+  multiplierReward:
+    operationType: 0
+    value: 5
+  description: Spicy cards gain +5 Multiplier

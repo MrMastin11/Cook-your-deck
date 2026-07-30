@@ -9,11 +9,14 @@ public class JokerInstance : MonoBehaviour
 
     [Header("Runtime Data")]
     public string jokerName;
+    public Sprite jokerSprite;
+
     public JokersData.ConditionType conditionType;
     public JokersData.CardType cardType;
-    public JokersData.ValueType valueType;
-    public JokersData.OperationType operationType;
-    public int rewardValue;
+
+    public JokersData.Reward scoreReward;
+    public JokersData.Reward multiplierReward;
+
     public string description;
 
     private void Awake()
@@ -32,17 +35,18 @@ public class JokerInstance : MonoBehaviour
         Data = data;
 
         jokerName = data.jokerName;
+        jokerSprite = data.jokerSprite;
+
         conditionType = data.conditionType;
 
-        // Беремо перший тип карти зі списку, якщо він існує
         if (data.cardTypes != null && data.cardTypes.Count > 0)
             cardType = data.cardTypes[0];
         else
             cardType = default;
 
-        valueType = data.valueType;
-        operationType = data.operationType;
-        rewardValue = data.rewardValue;
+        scoreReward = data.scoreReward;
+        multiplierReward = data.multiplierReward;
+
         description = data.description;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeckManager : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class DeckManager : MonoBehaviour
     private List<CardData> deck = new List<CardData>();
     private List<CardData> discardPile = new List<CardData>();
     private HashSet<CardData> mergedCards = new HashSet<CardData>();
+
+    [Header("Joker Data")]
+    [SerializeField] private JokerInstance jokerPrefab;
+    [SerializeField] private Transform jokerZone;
+    [SerializeField] private JokersData[] allJokers;
+    [SerializeField] private List<JokersData> currentJokers = new List<JokersData>();
 
     [Header("Score")]
     public int score = 0;
@@ -58,6 +65,7 @@ public class DeckManager : MonoBehaviour
     private bool isChoosingReward = false;
     private int startingMinimumScore;
     private int maxScoreThisRun = 0;
+    private JokersData[] startingAllJokers;
 
     public void Start()
     {
@@ -65,12 +73,16 @@ public class DeckManager : MonoBehaviour
             WinPanel.SetActive(false);
 
         if (deathPanel != null)
+        {
+            SetDeathPanelAlphaOne();
             deathPanel.SetActive(false);
+        }
     }
 
     private void Awake()
     {
         startingMinimumScore = minimumScore;
+        startingAllJokers = (JokersData[])allJokers.Clone();
         InitializePlayerDeck();
         deck.AddRange(playerDeck);
         ShuffleDeck();
@@ -294,7 +306,10 @@ public class DeckManager : MonoBehaviour
             WinPanel.SetActive(false);
 
         if (deathPanel != null)
+        {
+            SetDeathPanelAlphaOne();
             deathPanel.SetActive(false);
+        }
 
         Day = 1;
         score = 0;
@@ -313,6 +328,8 @@ public class DeckManager : MonoBehaviour
         ClearZoneCards(tableZone);
 
         InitializePlayerDeck();
+        allJokers = (JokersData[])startingAllJokers.Clone();
+        currentJokers.Clear();
         ResetDeckForNewDay();
         ResetRoundCardPlays();
 
@@ -344,7 +361,17 @@ public class DeckManager : MonoBehaviour
         if (deathDayCompleteText != null)
             deathDayCompleteText.text = "DAYS COMPLETE: " + Mathf.Max(0, Day - 1).ToString();
 
+        SetDeathPanelAlphaOne();
         deathPanel.SetActive(true);
+    }
+
+    private void SetDeathPanelAlphaOne()
+    {
+        if (deathPanel == null) return;
+
+        CanvasGroup canvasGroup = deathPanel.GetComponent<CanvasGroup>();
+        if (canvasGroup != null)
+            canvasGroup.alpha = 1f;
     }
 
     public List<CardData> GetThreeRandomCards()
@@ -376,6 +403,12 @@ public class DeckManager : MonoBehaviour
 
     private IEnumerator SpawnRewardCardsCoroutine()
     {
+        if (Day % 3 == 0)
+        {
+            yield return StartCoroutine(SpawnRewardJokersCoroutine());
+            yield break;
+        }
+
         List<CardData> choices = GetThreeRandomCards();
 
         foreach (var data in choices)
@@ -386,6 +419,86 @@ public class DeckManager : MonoBehaviour
 
         // 🔓 тепер можна клікати
         DragCard.inputLocked = false;
+    }
+
+    private IEnumerator SpawnRewardJokersCoroutine()
+    {
+        List<JokersData> choices = GetThreeRandomJokers();
+
+        foreach (var data in choices)
+        {
+            SpawnRewardJoker(data);
+            yield return new WaitForSeconds(smallWait);
+        }
+
+        DragCard.inputLocked = false;
+    }
+
+    private List<JokersData> GetThreeRandomJokers()
+    {
+        List<JokersData> pool = new List<JokersData>();
+        List<JokersData> result = new List<JokersData>();
+
+        foreach (var joker in allJokers)
+        {
+            if (joker != null)
+                pool.Add(joker);
+        }
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (pool.Count == 0) break;
+
+            int index = Random.Range(0, pool.Count);
+            result.Add(pool[index]);
+            pool.RemoveAt(index);
+        }
+
+        return result;
+    }
+
+    private void SpawnRewardJoker(JokersData data)
+    {
+        if (jokerPrefab == null || rewardZone == null || data == null) return;
+
+        int index = GetRewardJokerCount();
+        JokerInstance joker = Instantiate(jokerPrefab, rewardZone, false);
+        joker.Init(data);
+
+        Image image = joker.GetComponent<Image>();
+        if (image != null && data.jokerSprite != null)
+            image.sprite = data.jokerSprite;
+
+        JokerRewardChoice choice = joker.GetComponent<JokerRewardChoice>();
+        if (choice == null)
+            choice = joker.gameObject.AddComponent<JokerRewardChoice>();
+
+        choice.Init(this, data);
+
+        RectTransform rect = joker.transform as RectTransform;
+        if (rect != null)
+            rect.anchoredPosition = Vector2.right * 95f * index;
+        else
+            joker.transform.position = rewardZone.position + Vector3.right * 95f * index;
+
+        joker.transform.localScale = Vector3.one;
+
+        RevardText.text = "Choose one:";
+    }
+
+    private int GetRewardJokerCount()
+    {
+        if (rewardZone == null) return 0;
+
+        int count = 0;
+
+        for (int i = 0; i < rewardZone.childCount; i++)
+        {
+            if (rewardZone.GetChild(i).GetComponent<JokerInstance>() != null)
+                count++;
+        }
+
+        return count;
     }
 
     private void SpawnRewardCard(CardData data)
@@ -411,6 +524,68 @@ public class DeckManager : MonoBehaviour
     public void SelectRewardCard(DragCard selectedCard, CardData data)
     {
         StartCoroutine(SelectRewardCardCoroutine(selectedCard, data));
+    }
+
+    public void SelectRewardJoker(JokerRewardChoice selectedJoker, JokersData data)
+    {
+        StartCoroutine(SelectRewardJokerCoroutine(selectedJoker, data));
+    }
+
+    private IEnumerator SelectRewardJokerCoroutine(JokerRewardChoice selectedJoker, JokersData data)
+    {
+        List<JokerRewardChoice> choices = new List<JokerRewardChoice>();
+
+        if (rewardZone != null)
+        {
+            for (int i = rewardZone.childCount - 1; i >= 0; i--)
+            {
+                JokerRewardChoice choice = rewardZone.GetChild(i).GetComponent<JokerRewardChoice>();
+                if (choice == null) continue;
+
+                choices.Add(choice);
+
+                CanvasGroup canvasGroup = choice.GetComponent<CanvasGroup>();
+                if (canvasGroup != null)
+                    canvasGroup.blocksRaycasts = false;
+            }
+        }
+
+        foreach (var choice in choices)
+        {
+            if (choice == null || choice == selectedJoker)
+                continue;
+
+            Destroy(choice.gameObject);
+        }
+
+        yield return new WaitForSeconds(0.3f);
+
+        MoveJokerDataToCurrent(data);
+
+        if (selectedJoker != null && jokerZone != null)
+        {
+            selectedJoker.transform.SetParent(jokerZone, false);
+            selectedJoker.transform.localScale = Vector3.one;
+
+            RectTransform rect = selectedJoker.transform as RectTransform;
+            if (rect != null)
+                rect.anchoredPosition = Vector2.right * 95f * Mathf.Max(0, currentJokers.Count - 1);
+        }
+
+        isChoosingReward = false;
+        RevardGeted();
+    }
+
+    private void MoveJokerDataToCurrent(JokersData data)
+    {
+        if (data == null) return;
+
+        List<JokersData> all = new List<JokersData>(allJokers);
+        all.Remove(data);
+        allJokers = all.ToArray();
+
+        if (!currentJokers.Contains(data))
+            currentJokers.Add(data);
     }
 
     private IEnumerator SelectRewardCardCoroutine(DragCard selectedCard, CardData data)

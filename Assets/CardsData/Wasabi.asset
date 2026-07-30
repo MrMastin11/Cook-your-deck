@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Wasabi
   type: Spicy
-  artwork: {fileID: 8818841184260042866, guid: bda9b900d5cdae647983e4a2b48c1b16, type: 3}
+  artwork: {fileID: 3569136319685160188, guid: a23682589ed5fba48a5e33f3cfa748a4, type: 3}
   value: 2
   multiplier: 7
   level: 1
