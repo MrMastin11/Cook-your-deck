@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cake
   m_EditorClassIdentifier: 
   jokerName: Cake
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 8732635013323328055, guid: 9d31e7b2c1fb37c40bf94b7038650a8e, type: 3}
   conditionType: 0
   cardTypes: 01000000
   scoreReward:

@@ -49,7 +49,7 @@ public class DeckManager : MonoBehaviour
 
     [Header("Timing")]
     [SerializeField] private float fibStepWait = 0.01f;
-    [SerializeField] private float smallWait = 0.3f;
+    [SerializeField] private float smallWait = 0.4f; // single canonical effect delay used everywhere
 
     public GameObject WinPanel;
     [SerializeField] private GameObject deathPanel;
@@ -138,43 +138,127 @@ public class DeckManager : MonoBehaviour
 
         var cardsOnTable = new List<DragCard>(tableZone.cards);
 
+        // canonical delay used for every visual "effect" (card or joker)
+        float effectDelay = smallWait;
+
+        // Process each card: apply card effect, then yield exactly one delay.
+        // After that apply each matching Solo joker — each joker is an effect with exactly one delay.
         foreach (var dragCard in cardsOnTable)
         {
             var instance = dragCard.GetComponent<CardInstance>();
+            if (instance == null || instance.data == null) continue;
 
-            if (instance != null && instance.data != null)
+            dragCard.countingUP();
+
+            value += instance.data.value;
+            if (ValueText != null) ValueText.text = value.ToString();
+
+            multiplier += instance.data.multiplier;
+            if (MultText != null) MultText.text = multiplier.ToString();
+
+            // one delay for the card effect
+            yield return StartCoroutine(WaitSecond(effectDelay));
+
+            // apply Solo jokers for this card — one delay after each joker effect
+            foreach (var joker in currentJokers)
             {
-                yield return StartCoroutine(WaitSecond(smallWait));
+                if (joker == null) continue;
+                if (joker.conditionType != JokersData.ConditionType.Solo) continue;
+                if (string.IsNullOrWhiteSpace(instance.data.type)) continue;
+                if (!System.Enum.TryParse<JokersData.CardType>(instance.data.type, true, out var parsedCardType)) continue;
 
-                dragCard.countingUP();
+                if (joker.cardTypes != null && joker.cardTypes.Contains(parsedCardType))
+                {
+                    if (joker.scoreReward != null)
+                    {
+                        if (joker.scoreReward.operationType == JokersData.OperationType.Add)
+                            value += joker.scoreReward.value;
+                        else
+                            value *= joker.scoreReward.value;
+                    }
 
-                value += instance.data.value;
-                ValueText.text = value.ToString();
+                    if (joker.multiplierReward != null)
+                    {
+                        if (joker.multiplierReward.operationType == JokersData.OperationType.Add)
+                            multiplier += joker.multiplierReward.value;
+                        else
+                            multiplier *= joker.multiplierReward.value;
+                    }
 
-                multiplier += instance.data.multiplier;
-                MultText.text = multiplier.ToString();
+                    if (ValueText != null) ValueText.text = value.ToString();
+                    if (MultText != null) MultText.text = multiplier.ToString();
 
-                yield return StartCoroutine(WaitSecond(smallWait));
+                    Debug.Log($"Applied Solo Joker '{joker.jokerName}' to card '{instance.data.name}'");
 
-                discardPile.Add(instance.data);
-
-                yield return StartCoroutine(WaitSecond(smallWait));
+                    // one delay for this joker effect
+                    yield return StartCoroutine(WaitSecond(effectDelay));
+                }
             }
+
+            // move card to discard (no extra visual delay here; card+jokers already consumed effect slots)
+            discardPile.Add(instance.data);
         }
 
-        yield return StartCoroutine(WaitSecond(smallWait));
+        // Process Pair jokers: each successful pair-joker is treated as one effect (apply + one delay)
+        foreach (var joker in currentJokers)
+        {
+            if (joker == null) continue;
+            if (joker.conditionType != JokersData.ConditionType.Pair) continue;
 
+            bool hasAllRequiredCards = true;
+            foreach (var requiredType in joker.cardTypes)
+            {
+                bool found = false;
+                foreach (var dragCard in cardsOnTable)
+                {
+                    var instance = dragCard.GetComponent<CardInstance>();
+                    if (instance == null || instance.data == null) continue;
+                    if (string.IsNullOrWhiteSpace(instance.data.type)) continue;
+                    if (!System.Enum.TryParse(instance.data.type, true, out JokersData.CardType parsedType)) continue;
+                    if (parsedType == requiredType) { found = true; break; }
+                }
+                if (!found) { hasAllRequiredCards = false; break; }
+            }
+
+            if (!hasAllRequiredCards) continue;
+
+            // apply pair joker reward
+            if (joker.scoreReward != null)
+            {
+                if (joker.scoreReward.operationType == JokersData.OperationType.Add)
+                    value += joker.scoreReward.value;
+                else
+                    value *= joker.scoreReward.value;
+            }
+
+            if (joker.multiplierReward != null)
+            {
+                if (joker.multiplierReward.operationType == JokersData.OperationType.Add)
+                    multiplier += joker.multiplierReward.value;
+                else
+                    multiplier *= joker.multiplierReward.value;
+            }
+
+            if (ValueText != null) ValueText.text = value.ToString();
+            if (MultText != null) MultText.text = multiplier.ToString();
+
+            Debug.Log($"Applied Pair Joker '{joker.jokerName}'");
+
+            // one delay for this pair-joker effect
+            yield return StartCoroutine(WaitSecond(effectDelay));
+        }
+
+        // finalize turn scoring
         int turnScore = value * multiplier;
 
         yield return StartCoroutine(CountScoreFibonacci(turnScore));
-
-        yield return StartCoroutine(WaitSecond(smallWait));
+        yield return StartCoroutine(WaitSecond(effectDelay));
 
         score += countScore;
         maxScoreThisRun = Mathf.Max(maxScoreThisRun, score);
         UpdateScoreUI();
 
-        yield return StartCoroutine(WaitSecond(smallWait));
+        yield return StartCoroutine(WaitSecond(effectDelay));
 
         countScore = 0;
         UpdateCountScoreUI();
@@ -187,10 +271,10 @@ public class DeckManager : MonoBehaviour
         }
 
         value = 1;
-        ValueText.text = value.ToString();
+        if (ValueText != null) ValueText.text = value.ToString();
 
         multiplier = 1;
-        MultText.text = multiplier.ToString();
+        if (MultText != null) MultText.text = multiplier.ToString();
 
         if (score >= minimumScore)
         {
@@ -204,13 +288,13 @@ public class DeckManager : MonoBehaviour
             yield break;
         }
 
-        yield return StartCoroutine(WaitSecond(smallWait));
+        yield return StartCoroutine(WaitSecond(effectDelay));
 
         for (int i = 0; i < 3; i++)
         {
             if (handZone != null && handZone.cards.Count >= handZone.maxCards) break;
             DrawCard();
-            yield return StartCoroutine(WaitSecond(smallWait));
+            yield return StartCoroutine(WaitSecond(effectDelay));
         }
         CheckAndRefillDeck();
         DragCard.inputLocked = false;
@@ -328,8 +412,36 @@ public class DeckManager : MonoBehaviour
         ClearZoneCards(tableZone);
 
         InitializePlayerDeck();
-        allJokers = (JokersData[])startingAllJokers.Clone();
+
+        // Restore all jokers data back to allJokers and clear current jokers
+        if (startingAllJokers != null)
+            allJokers = (JokersData[])startingAllJokers.Clone();
+        else
+            allJokers = new JokersData[0];
+
         currentJokers.Clear();
+
+        // Remove any JokerInstance GameObjects from joker zone and reward zone
+        if (jokerZone != null)
+        {
+            for (int i = jokerZone.childCount - 1; i >= 0; i--)
+            {
+                Transform child = jokerZone.GetChild(i);
+                if (child.GetComponent<JokerInstance>() != null || child.GetComponent<JokerRewardChoice>() != null)
+                    Destroy(child.gameObject);
+            }
+        }
+
+        if (rewardZone != null)
+        {
+            for (int i = rewardZone.childCount - 1; i >= 0; i--)
+            {
+                Transform child = rewardZone.GetChild(i);
+                if (child.GetComponent<JokerInstance>() != null || child.GetComponent<JokerRewardChoice>() != null)
+                    Destroy(child.gameObject);
+            }
+        }
+
         ResetDeckForNewDay();
         ResetRoundCardPlays();
 
