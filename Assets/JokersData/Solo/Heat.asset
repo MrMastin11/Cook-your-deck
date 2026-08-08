@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heat
   m_EditorClassIdentifier: 
   jokerName: Heat
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: -6929276684547898921, guid: 92eee6c67b69a5148ab7b29f3e5fef26, type: 3}
   conditionType: 0
   cardTypes: 04000000
   scoreReward:

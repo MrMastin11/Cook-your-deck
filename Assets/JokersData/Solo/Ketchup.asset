@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ketchup
   m_EditorClassIdentifier: 
   jokerName: Ketchup
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: -9032648240131754058, guid: e1b4a2a47a7a48846afbfacbf7118cf0, type: 3}
   conditionType: 0
   cardTypes: 04000000
   scoreReward:

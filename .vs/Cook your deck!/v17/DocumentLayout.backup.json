@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "D:\\PROJECTS\\Cook your deck!\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|d:\\projects\\cook your deck!\\assets\\scripts\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|d:\\projects\\cook your deck!\\assets\\scripts\\jokerrewardchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\carddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\jokerrewardchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jokerrewardchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,11 +23,7 @@
       "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jokerinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\scripts\\carddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|d:\\projects\\cook your deck!\\assets\\tooltiplogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|D:\\PROJECTS\\Cook your deck!\\assets\\tooltiplogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B088AA5-B905-EE53-ED52-B13EF20290E3}|Assembly-CSharp.csproj|solutionrelative:assets\\tooltiplogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\DeckManager.cs",
               "ToolTip": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\DeckManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\DeckManager.cs",
-              "ViewState": "AgIAALcAAAAAAAAAAAAkwPwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwDMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-26T12:48:04.383Z",
               "IsPinned": true,
@@ -96,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "JokerRewardChoice.cs",
               "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\JokerRewardChoice.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\JokerRewardChoice.cs",
@@ -104,8 +104,7 @@
               "RelativeToolTip": "Assets\\Scripts\\JokerRewardChoice.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-31T09:39:26.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-31T09:39:26.904Z"
             },
             {
               "$type": "Document",
@@ -117,8 +116,7 @@
               "RelativeToolTip": "Assets\\TooltipLogic.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAgwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-30T18:08:31.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-30T18:08:31.115Z"
             },
             {
               "$type": "Document",
@@ -206,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "CardData.cs",
               "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\CardData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardData.cs",
@@ -214,12 +212,11 @@
               "RelativeToolTip": "Assets\\Scripts\\CardData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T13:59:24.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T13:59:24.24Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "JokersData.cs",
               "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\JokersData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\JokersData.cs",
@@ -227,12 +224,11 @@
               "RelativeToolTip": "Assets\\Scripts\\JokersData.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAuwBAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-16T12:32:41.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-16T12:32:41.466Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "JokerInstance.cs",
               "DocumentMoniker": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\JokerInstance.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\JokerInstance.cs",
@@ -240,8 +236,7 @@
               "RelativeToolTip": "Assets\\Scripts\\JokerInstance.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAYwDMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-17T18:03:25.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-17T18:03:25.662Z"
             }
           ]
         }

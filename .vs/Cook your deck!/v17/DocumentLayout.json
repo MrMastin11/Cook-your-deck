@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\DeckManager.cs",
               "ToolTip": "D:\\PROJECTS\\Cook your deck!\\Assets\\Scripts\\DeckManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\DeckManager.cs",
-              "ViewState": "AgIAAJ8BAAAAAAAAAAAUwPwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwDIAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-26T12:48:04.383Z",
               "IsPinned": true,
@@ -212,8 +212,7 @@
               "RelativeToolTip": "Assets\\Scripts\\CardData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T13:59:24.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T13:59:24.24Z"
             },
             {
               "$type": "Document",

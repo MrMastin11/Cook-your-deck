@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Salted caramel
   m_EditorClassIdentifier: 
   jokerName: Salted caramel
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: -3338511126243222352, guid: 9af4800999a76f34f80e789ec15fe067, type: 3}
   conditionType: 1
   cardTypes: 0100000002000000
   scoreReward:

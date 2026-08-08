@@ -48,8 +48,8 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI cardPlaysText;
 
     [Header("Timing")]
-    [SerializeField] private float fibStepWait = 0.01f;
-    [SerializeField] private float smallWait = 0.4f; // single canonical effect delay used everywhere
+    [SerializeField] private float fibStepWait = 0.1f;
+    [SerializeField] private float smallWait = 0.5f; // single canonical effect delay used everywhere
 
     public GameObject WinPanel;
     [SerializeField] private GameObject deathPanel;
@@ -188,7 +188,10 @@ public class DeckManager : MonoBehaviour
                     if (ValueText != null) ValueText.text = value.ToString();
                     if (MultText != null) MultText.text = multiplier.ToString();
 
-                    Debug.Log($"Applied Solo Joker '{joker.jokerName}' to card '{instance.data.name}'");
+                    //Debug.Log($"Applied Solo Joker '{joker.jokerName}' to card '{instance.data.name}'");
+                    var ji = FindJokerInstance(joker);
+                    if (ji != null)
+                        ji.PlayActivateAnimation(effectDelay, 1.4f);
 
                     // one delay for this joker effect
                     yield return StartCoroutine(WaitSecond(effectDelay));
@@ -242,7 +245,10 @@ public class DeckManager : MonoBehaviour
             if (ValueText != null) ValueText.text = value.ToString();
             if (MultText != null) MultText.text = multiplier.ToString();
 
-            Debug.Log($"Applied Pair Joker '{joker.jokerName}'");
+            //Debug.Log($"Applied Pair Joker '{joker.jokerName}'");
+            var pairJi = FindJokerInstance(joker);
+            if (pairJi != null)
+                pairJi.PlayActivateAnimation(effectDelay);
 
             // one delay for this pair-joker effect
             yield return StartCoroutine(WaitSecond(effectDelay));
@@ -1154,8 +1160,23 @@ public class DeckManager : MonoBehaviour
 
     private void UpdateDayUI()
     {
-        if (dayText != null)
-            dayText.text = "Day: " + Day.ToString();
+        if (dayText == null) return;
+
+        string[] dayNames = new string[]
+        {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        };
+
+        int index = (Day - 1) % 7;
+        if (index < 0) index += 7;
+
+        dayText.text = $"Day {Day}\n {dayNames[index]}";
     }
     public int DeckCount => deck.Count;
 
@@ -1189,5 +1210,35 @@ public class DeckManager : MonoBehaviour
         {
             RefillDeck();
         }
+    }
+
+    // helper: find JokerInstance GameObject that corresponds to JokersData
+    private JokerInstance FindJokerInstance(JokersData data)
+    {
+        if (data == null) return null;
+
+        // check joker zone (active equipped jokers)
+        if (jokerZone != null)
+        {
+            for (int i = 0; i < jokerZone.childCount; i++)
+            {
+                var ji = jokerZone.GetChild(i).GetComponent<JokerInstance>();
+                if (ji != null && ji.Data == data)
+                    return ji;
+            }
+        }
+
+        // also check reward zone (when joker was just spawned as a reward)
+        if (rewardZone != null)
+        {
+            for (int i = 0; i < rewardZone.childCount; i++)
+            {
+                var ji = rewardZone.GetChild(i).GetComponent<JokerInstance>();
+                if (ji != null && ji.Data == data)
+                    return ji;
+            }
+        }
+
+        return null;
     }
 }

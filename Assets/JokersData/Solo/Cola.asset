@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cola
   m_EditorClassIdentifier: 
   jokerName: Cola
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 2138416828236337748, guid: 008ff9b8408280d4085dce9d657baf5d, type: 3}
   conditionType: 0
   cardTypes: 01000000
   scoreReward:

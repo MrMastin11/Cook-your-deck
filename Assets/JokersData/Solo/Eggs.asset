@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Eggs
   m_EditorClassIdentifier: 
   jokerName: Eggs
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: -4072622106568590741, guid: 7253a82677c4ac445972de13494f16f4, type: 3}
   conditionType: 0
   cardTypes: 02000000
   scoreReward:

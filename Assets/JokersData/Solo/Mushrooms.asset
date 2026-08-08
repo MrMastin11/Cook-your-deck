@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mushrooms
   m_EditorClassIdentifier: 
   jokerName: Mushrooms
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: -4269082015873047731, guid: b85779e86466da24ebfc78cdc30ccd1f, type: 3}
   conditionType: 0
   cardTypes: 00000000
   scoreReward:

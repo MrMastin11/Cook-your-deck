@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Jalapenos
   m_EditorClassIdentifier: 
   jokerName: Jalapenos
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 362288273428719218, guid: 8ba8ae82174dd7f459018135ad9b8ea1, type: 3}
   conditionType: 1
   cardTypes: 0300000004000000
   scoreReward:
@@ -22,4 +22,4 @@ MonoBehaviour:
   multiplierReward:
     operationType: 1
     value: 2
-  description: "Sour + Spicy gain \xD72 Taste"
+  description: "Sour + Spicy gain \xD72 Mult"

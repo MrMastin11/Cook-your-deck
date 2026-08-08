@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grill
   m_EditorClassIdentifier: 
   jokerName: Grill
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: -2530880790662480296, guid: a04a942bc8ef5cc47a4dc87d3bbf9751, type: 3}
   conditionType: 0
   cardTypes: 00000000
   scoreReward:

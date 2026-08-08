@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Juice
   m_EditorClassIdentifier: 
   jokerName: juice
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 2791105872119289076, guid: 8241ee589920a2d40b6bb525dca14f42, type: 3}
   conditionType: 0
   cardTypes: 03000000
   scoreReward:

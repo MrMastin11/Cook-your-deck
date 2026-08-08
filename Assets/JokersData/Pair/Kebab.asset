@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kebab
   m_EditorClassIdentifier: 
   jokerName: Kebab
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 1415303770347057802, guid: d2f89433b0be18b469f013e6b3b279f3, type: 3}
   conditionType: 1
   cardTypes: 0000000004000000
   scoreReward:

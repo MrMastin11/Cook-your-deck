@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sauce
   m_EditorClassIdentifier: 
   jokerName: Sauce
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 4832027901452790681, guid: 3db16934bab6f094cb373c2ef6b58fb1, type: 3}
   conditionType: 1
   cardTypes: 0100000003000000
   scoreReward:

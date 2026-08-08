@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sweet pepper
   m_EditorClassIdentifier: 
   jokerName: Sweet pepper
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: -1838432638908673244, guid: cfd2f3f38e1bdd745942849a823f4316, type: 3}
   conditionType: 1
   cardTypes: 0100000004000000
   scoreReward:

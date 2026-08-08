@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Teriyaki
   m_EditorClassIdentifier: 
   jokerName: Teriyaki
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 3066602379036425781, guid: 4a797e171011e254b83833250fd86bb6, type: 3}
   conditionType: 1
   cardTypes: 0000000001000000
   scoreReward:

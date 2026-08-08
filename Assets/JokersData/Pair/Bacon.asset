@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bacon
   m_EditorClassIdentifier: 
   jokerName: Bacon
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 2868545619943879554, guid: 84e123f8cfeedd643aa4c6261c0555c3, type: 3}
   conditionType: 1
   cardTypes: 0000000002000000
   scoreReward:

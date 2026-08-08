@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5b0a03a9a45ac3478fd4fd307c59dba, type: 3}
-  m_Name: Marinade
+  m_Name: Shawarma
   m_EditorClassIdentifier: 
-  jokerName: Marinade
-  jokerSprite: {fileID: 0}
+  jokerName: Shawarma
+  jokerSprite: {fileID: -3183756464830776683, guid: cf1c25f41f277be4ebfa981cdc59fc86, type: 3}
   conditionType: 1
   cardTypes: 0000000003000000
   scoreReward:

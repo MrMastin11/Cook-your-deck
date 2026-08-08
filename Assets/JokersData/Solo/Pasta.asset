@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pasta
   m_EditorClassIdentifier: 
   jokerName: Pasta
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: -7719260066235554890, guid: 37ee9159b3f1efd4f95ac7e131561af6, type: 3}
   conditionType: 0
   cardTypes: 02000000
   scoreReward:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spices
   m_EditorClassIdentifier: 
   jokerName: Spices
-  jokerSprite: {fileID: 0}
+  jokerSprite: {fileID: 3598900864000511371, guid: 4d1c55a965d22f042bd920d12dba74af, type: 3}
   conditionType: 1
   cardTypes: 0200000004000000
   scoreReward:
@@ -22,4 +22,4 @@ MonoBehaviour:
   multiplierReward:
     operationType: 1
     value: 2
-  description: "Salty + Spicy gain \xD72 Taste"
+  description: "Salty + Spicy gain \xD72 Mult"
