@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class JokerInstance : MonoBehaviour
+public class JokerInstance : MonoBehaviour, IPointerClickHandler
 {
     [Header("Scriptable Object")]
     [SerializeField] private JokersData jokerData;
@@ -16,6 +17,13 @@ public class JokerInstance : MonoBehaviour
     public JokersData.Reward scoreReward;
     public JokersData.Reward multiplierReward;
     public string description;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        DeckManager deckManager = FindObjectOfType<DeckManager>();
+        if (deckManager != null)
+            deckManager.SelectJokerToReplace(this);
+    }
 
     // animation coroutine handle
     private Coroutine activateCoroutine;

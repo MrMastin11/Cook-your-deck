@@ -22,4 +22,4 @@ MonoBehaviour:
   multiplierReward:
     operationType: 0
     value: 0
-  description: Meat cards gain +10 Taste
+  description: All meat cards gain +10 Taste

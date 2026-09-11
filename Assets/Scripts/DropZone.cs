@@ -36,9 +36,10 @@ public class DropZone : MonoBehaviour
 
         UpdateCardPositions();
 
-        if (endButton != null)
+        // Only the table zone should control the end-turn button.
+        if (isTableZone && endButton != null)
         {
-            bool shouldShow = (cards.Count == 3 && isTableZone);
+            bool shouldShow = (cards.Count == 3);
             endButton.SetActive(shouldShow);
         }
     }
@@ -49,6 +50,13 @@ public class DropZone : MonoBehaviour
         {
             cards.Remove(card);
             UpdateCardPositions();
+
+            // If this is the table zone, update end button when cards change.
+            if (isTableZone && endButton != null)
+            {
+                bool shouldShow = (cards.Count == 3);
+                endButton.SetActive(shouldShow);
+            }
         }
     }
 

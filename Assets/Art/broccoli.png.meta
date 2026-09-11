@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      broccoli_0: -6693019930522712741
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

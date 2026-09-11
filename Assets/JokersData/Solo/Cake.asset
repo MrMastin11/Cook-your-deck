@@ -22,4 +22,4 @@ MonoBehaviour:
   multiplierReward:
     operationType: 0
     value: 0
-  description: Sweet cards gain +10 Taste
+  description: All sweet cards gain +10 Taste

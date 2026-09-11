@@ -22,4 +22,4 @@ MonoBehaviour:
   multiplierReward:
     operationType: 0
     value: 5
-  description: Salty cards gain +5 Multiplier
+  description: All salty cards gain +5 Multiplier

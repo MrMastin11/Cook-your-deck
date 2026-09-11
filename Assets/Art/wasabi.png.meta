@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wasabi_0: -4575889938362638276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

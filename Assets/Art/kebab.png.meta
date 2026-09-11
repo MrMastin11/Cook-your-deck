@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kebab_0: -3183756464830776683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

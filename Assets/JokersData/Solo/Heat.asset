@@ -22,4 +22,4 @@ MonoBehaviour:
   multiplierReward:
     operationType: 0
     value: 5
-  description: Spicy cards gain +5 Multiplier
+  description: All spicy cards gain +5 Multiplier

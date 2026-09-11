@@ -22,4 +22,4 @@ MonoBehaviour:
   multiplierReward:
     operationType: 0
     value: 5
-  description: Sweet cards gain +5 Multiplier
+  description: All sweet cards gain +5 Multiplier
